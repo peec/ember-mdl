@@ -1,0 +1,11 @@
+{{input type="checkbox" id=controlId class="mdl-checkbox__input" name=name checked=checked}}
+<span class="mdl-checkbox__label">{{label}}</span>
+<span class={{CssClasses.BOX_OUTLINE}}>
+    <span class={{CssClasses.TICK_OUTLINE}}></span>
+</span>
+<span class={{CssClasses.FOCUS_HELPER}}></span>
+{{#if ripple}}
+    <span class="mdl-checkbox__ripple-container mdl-ripple--center">
+        {{mdl-ripple}}
+    </span>
+{{/if}}
