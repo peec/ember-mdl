@@ -1,0 +1,6 @@
+{{#if showDrawerButton}}
+    {{#if fixed}}
+        <div class={{concat "mdl-layout__drawer-button" (if _layoutComponent.drawerComponent.largeScreen ' mdl-layout--large-screen-only ') (if _layoutComponent.drawerComponent.smallScreen ' mdl-layout--small-screen-only ')}} {{action "toggleMenu" on="click"}}><i class="material-icons">menu</i></div>
+    {{/if}}
+{{/if}}
+{{yield}}

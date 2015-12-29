@@ -1,0 +1,7 @@
+{{yield}}
+{{#if hasDrawer}}
+    {{#unless headerComponent.fixed}}
+        <div class={{concat "mdl-layout__drawer-button" (if drawerComponent.largeScreen ' mdl-layout--large-screen-only ') (if drawerComponent.smallScreen ' mdl-layout--small-screen-only ')}} {{action "toggleMenu" on="click"}}><i class="material-icons">menu</i></div>
+    {{/unless}}
+{{/if}}
+{{mdl-layout-obfuscator isActive=drawerOpen action="closeDrawer"}}

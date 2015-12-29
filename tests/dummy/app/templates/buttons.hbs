@@ -1,10 +1,71 @@
+<h2>Buttons</h2>
 
-<h3>Raised Button</h3>
+<h4>Colored FAB</h4>
+{{#mdl-button fab=true accent=true action="doSomethingReallyCool" param1toaction="hello" someother="world" }}<i class="material-icons">add</i>{{/mdl-button}}
+
+<h4>Colored FAB with ripple</h4>
+{{#mdl-button fab=true accent=true ripple=true }}<i class="material-icons">add</i>{{/mdl-button}}
+
+
+<h4>Plain FAB</h4>
+{{#mdl-button fab=true ripple=false}}<i class="material-icons">add</i>{{/mdl-button}}
+
+
+<h4>Plain FAB with ripple</h4>
+{{#mdl-button fab=true ripple=true}}<i class="material-icons">add</i>{{/mdl-button}}
+
+
+
+<h4>Plain FAB disabled</h4>
+{{#mdl-button fab=true disabled=true}}<i class="material-icons">add</i>{{/mdl-button}}
+
+
+<h4>Raised Button</h4>
 {{#mdl-button   raised=true }}Button{{/mdl-button}}
+
+<h4>Raised Button with ripple</h4>
 {{#mdl-button  ripple=true raised=true }}Button{{/mdl-button}}
 
 
-<h3>FAB</h3>
-{{#mdl-button fab=true ripple=true }}<i class="material-icons">add</i>{{/mdl-button}}
-{{#mdl-button fab=true accent=true }}<i class="material-icons">add</i>{{/mdl-button}}
-{{#mdl-button fab=true accent=true ripple=true }}<i class="material-icons">add</i>{{/mdl-button}}
+<h4>Raised Button disabled</h4>
+{{#mdl-button  ripple=true raised=true disabled=true }}Button{{/mdl-button}}
+
+<h4>Colored Raised Button</h4>
+{{#mdl-button  colored=true raised=true }}Button{{/mdl-button}}
+
+<h4>Accent colored Raised Button</h4>
+{{#mdl-button  accent=true raised=true }}Button{{/mdl-button}}
+
+<h4>Accent colored Raised Button with Ripples</h4>
+{{#mdl-button  accent=true raised=true ripple=true }}Button{{/mdl-button}}
+
+
+
+<h4>Flat button</h4>
+{{#mdl-button}}Button{{/mdl-button}}
+
+<h4>Flat button with Ripple</h4>
+{{#mdl-button ripple=true}}Button{{/mdl-button}}
+
+<h4>Flat button disabled</h4>
+{{#mdl-button disabled=true}}Button{{/mdl-button}}
+
+
+
+<h4>Primary colored flat</h4>
+{{#mdl-button primary=true}}Button{{/mdl-button}}
+<h4>Accent colored flat</h4>
+{{#mdl-button accent=true}}Button{{/mdl-button}}
+
+
+
+<h4>Icon button</h4>
+{{mdl-button icon="mood"}}
+<h4>Icon button colored</h4>
+{{mdl-button colored=true icon="mood"}}
+
+
+<h4>Mini FAB</h4>
+{{#mdl-button fab=true mini=true}}<i class="material-icons">add</i>{{/mdl-button}}
+<h4>Mini FAB Colored</h4>
+{{#mdl-button fab=true mini=true colored=true}}<i class="material-icons">add</i>{{/mdl-button}}

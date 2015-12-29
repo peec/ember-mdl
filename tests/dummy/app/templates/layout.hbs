@@ -1,0 +1,185 @@
+<h3>Layout</h3>
+
+
+
+<h4>Transparent header</h4>
+
+
+<!-- Uses a transparent header that draws on top of the layout's background -->
+<style>
+    .demo-layout-transparent {
+        background: url('/transparent.jpg') center / cover;
+    }
+    .demo-layout-transparent .mdl-layout__header,
+    .demo-layout-transparent .mdl-layout__drawer-button {
+        /* This background is dark, so we set text to white. Use 87% black instead if
+           your background is light. */
+        color: white;
+    }
+</style>
+
+<div class="snippet-demo">
+    {{#mdl-layout class="demo-layout-transparent"}}
+        {{#mdl-layout-header transparent=true}}
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Title</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
+            </div>
+        {{/mdl-layout-header}}
+        {{#mdl-layout-drawer}}
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+
+        {{/mdl-layout-drawer}}
+        {{#mdl-layout-content}}
+
+        {{/mdl-layout-content}}
+    {{/mdl-layout}}
+</div>
+
+
+
+<h4>Fixed drawer, no header</h4>
+
+
+<div class="snippet-demo">
+    {{#mdl-layout}}
+        {{#mdl-layout-drawer fixed=true}}
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+
+        {{/mdl-layout-drawer}}
+        {{#mdl-layout-content}}
+        {{/mdl-layout-content}}
+    {{/mdl-layout}}
+</div>
+
+
+<h4>Fixed header and drawer</h4>
+<div class="snippet-demo">
+    {{#mdl-layout}}
+        {{#mdl-layout-header fixed=true}}
+            <div class="mdl-layout__header-row">
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
+            </div>
+        {{/mdl-layout-header}}
+        {{#mdl-layout-drawer fixed=true}}
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+
+        {{/mdl-layout-drawer}}
+        {{#mdl-layout-content}}
+
+        {{/mdl-layout-content}}
+    {{/mdl-layout}}
+</div>
+
+<h4>Scrolling header</h4>
+<div class="snippet-demo">
+    {{#mdl-layout mode="scroll"}}
+        {{#mdl-layout-header}}
+            <div class="mdl-layout__header-row">
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
+            </div>
+        {{/mdl-layout-header}}
+        {{#mdl-layout-drawer}}
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+
+        {{/mdl-layout-drawer}}
+        {{#mdl-layout-content}}
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu metus convallis, aliquet lacus eu, scelerisque nisl. Nunc imperdiet et ipsum et pretium. Nulla facilisi. Proin placerat placerat finibus. Etiam pharetra orci iaculis lorem sollicitudin fermentum. Phasellus volutpat fringilla posuere. Duis efficitur sodales ligula eu consectetur. Nunc vehicula feugiat elit, eget fringilla leo molestie vitae. Nam sed mollis nibh, sit amet consectetur ligula. Praesent eget lectus a sem tempus suscipit.</p>
+
+            <p>Phasellus rutrum vulputate justo at accumsan. Nunc libero ligula, pharetra vel ultrices nec, feugiat at urna. Integer efficitur ut nisl non facilisis. Aenean vel rhoncus arcu, vitae mollis nunc. Vivamus venenatis justo id iaculis vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi volutpat erat non nisi feugiat egestas. Fusce quis sem a nisl euismod vestibulum ut id dui. Nullam erat lorem, ullamcorper in viverra at, mollis ut lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus pretium lacinia arcu id facilisis. Sed ac ex in est pellentesque varius. Vivamus hendrerit ligula elit, a placerat felis aliquet id. Suspendisse lobortis aliquet nunc, in semper ante vehicula nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+            <p>Integer suscipit lorem id nulla tempor, vel posuere nisl consequat. Phasellus facilisis interdum dui, ut semper tellus consectetur et. Nulla diam metus, vulputate sit amet dignissim ut, egestas vel erat. Cras molestie, nibh in fermentum rutrum, nulla nisi interdum arcu, vel egestas tortor lorem a purus. Praesent pharetra sed tortor vitae feugiat. Cras ac sapien convallis, venenatis arcu in, finibus nisi. Nam congue pharetra quam id tempus.</p>
+
+
+            <p>In ut sem in turpis facilisis fermentum eget lacinia metus. Maecenas efficitur nunc in felis malesuada congue. Nunc a accumsan lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam imperdiet mauris ut augue aliquet placerat in vel sapien. In venenatis lobortis risus id rhoncus. Proin vestibulum nisl id erat vulputate, sit amet imperdiet tellus facilisis. Curabitur volutpat justo enim, aliquet aliquam ante iaculis sed. Curabitur tempus id est vitae fringilla. Cras at rutrum nulla. Vestibulum dolor metus, rutrum et elit ut, tempus vulputate felis. Donec nec turpis suscipit, mollis augue eget, auctor leo.</p>
+
+            <p>Fusce eleifend massa eu ornare accumsan. Nulla tristique urna sit amet ex commodo, et fermentum lectus tristique. Quisque eu ultricies sem. Cras congue urna nec justo scelerisque pretium. Fusce vestibulum aliquam leo a scelerisque. Suspendisse a semper libero, molestie vehicula ipsum. Nunc vel euismod libero. Nunc orci libero, posuere et arcu et, luctus egestas odio. Curabitur porttitor scelerisque posuere. Donec id nisi libero. Cras id urna fringilla, vehicula arcu non, auctor augue. Suspendisse et sodales quam, et lacinia eros. Praesent aliquam, nunc eget ullamcorper tempor, mi tellus tristique nisi, at fringilla urna sem eget ligula.</p>
+
+
+
+        {{/mdl-layout-content}}
+    {{/mdl-layout}}
+</div>
+
+
+<h4>Grid</h4>
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+</div>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">4</div>
+    <div class="mdl-cell mdl-cell--4-col">4</div>
+    <div class="mdl-cell mdl-cell--4-col">4</div>
+</div>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col">6</div>
+    <div class="mdl-cell mdl-cell--4-col">4</div>
+    <div class="mdl-cell mdl-cell--2-col">2</div>
+</div>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">6 (8 tablet)</div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">4 (6 tablet)</div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">2 (4 phone)</div>
+</div>

@@ -25,7 +25,7 @@ module.exports = function(environment) {
     'font-src': "'self'  fonts.googleapis.com fonts.gstatic.com",
     'connect-src': "'self'",
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
-    'img-src': "'self' data:",
+    'img-src': "'self' data: camo.githubusercontent.com",
     'media-src': "'self'"
   };
 
@@ -50,7 +50,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/ember-mdl'
   }
 
   return ENV;

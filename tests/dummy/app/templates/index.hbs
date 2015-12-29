@@ -1,1 +1,51 @@
-<h1 class="mdl-typography--display-3">Ember Material Design Lite</h1>
+<h1>Ember Material Design Lite</h1>
+<p>Ember Implementation of Google's Material Design Lite Suite.</p>
+
+<h4>What does it contain?</h4>
+<ul>
+    <li>We use Google's official SASS without any modifications, so that's just a bower include.</li>
+    <li>The javascript implementation is completely based on Ember, and the JS that comes with MDL is not included.</li>
+    <li><a href="http://getmdl.io">Go to getmdl.io</a> for more information about MDL.</li>
+</ul>
+
+
+<h4>What are the goals of ember-mdl?</h4>
+
+<p>The goal of ember-mdl is to be a fully compatible Ember implementation of <a href="http://getmdl.io">Material Design Lite</a>. The CSS is used directly from MDL, so our focus is only on maintaining the JS implementation related to the components.</p>
+
+<p><strong>The major benefit of this Material Design implementation is the the CSS is directly from Google and validated by Google's UX teams</strong></p>
+
+<h4>Usage</h4>
+
+<p>For now, see the demo pages and <a href="https://github.com/peec/ember-mdl/tree/master/tests/dummy/app">The dummy app</a> for how to use the components.</p>
+
+
+<h4>Installation</h4>
+
+
+<h6>1. Install via CLI</h6>
+<p>Run <code>ember install ember-mdl</code></p>
+
+<h6>2. Add fonts</h6>
+<p>Add the following imports for fonts and icons to <strong>index.html</strong></p>
+<pre>
+&lt;link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'&gt;
+&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+</pre>
+
+
+<h6>3. Add Content policy</h6>
+<p>Add the following CSP to <code>app/config/environment.js</code>:</p>
+
+<pre>
+ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self'",
+    'font-src': "'self'  fonts.googleapis.com fonts.gstatic.com",
+    'connect-src': "'self'",
+    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
+    'img-src': "'self' data:",
+    'media-src': "'self'"
+};
+</pre>
+

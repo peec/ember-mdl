@@ -1,0 +1,36 @@
+<h3>Text Fields</h3>
+
+
+<!-- Simple Textfield -->
+<form action="#">
+    <h5>Text</h5>
+    {{mdl-textfield label="Your name"}}
+
+
+    <h5>Numeric</h5>
+    {{mdl-textfield label="Age" error="Must be a number" pattern="-?[0-9]*(\.[0-9]+)?"}}
+
+</form>
+
+<!-- Simple Textfield -->
+<form action="#">
+    <h5>Text with floating label</h5>
+    {{mdl-textfield label="Your name" floating=true}}
+
+    <h5>Numeric with floating label</h5>
+    {{mdl-textfield label="Age" error="Must be a number" pattern="-?[0-9]*(\.[0-9]+)?" floating=true}}
+
+</form>
+
+<!-- Simple Textfield -->
+<form action="#">
+    <h5>Multiple line</h5>
+    {{mdl-textfield label="Some info" multiline=true}}
+
+</form>
+
+<!-- Simple Textfield -->
+<form action="#">
+    <h5>Expanding</h5>
+    {{#mdl-textfield expand=true icon="search"}}{{/mdl-textfield}}
+</form>

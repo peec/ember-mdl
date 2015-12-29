@@ -1,0 +1,23 @@
+{{#if expand}}
+    {{#mdl-button icon=icon tagName="label" for=controlId action="focusInput"}}
+    {{/mdl-button}}
+    <div class="mdl-textfield__expandable-holder">
+        {{#if multiline}}
+            {{textarea class="mdl-textfield__input" pattern=pattern rows=rows value=value key-up="checkValid" id=controlId}}
+        {{else}}
+            {{input class="mdl-textfield__input" pattern=pattern value=value type="text" key-up="checkValid" id=controlId}}
+        {{/if}}
+    </div>
+{{else}}
+    {{#if multiline}}
+        {{textarea class="mdl-textfield__input" pattern=pattern rows=rows value=value key-up="checkValid" id=controlId}}
+    {{else}}
+        {{input class="mdl-textfield__input" pattern=pattern value=value type="text" key-up="checkValid" id=controlId}}
+    {{/if}}
+    <label class="mdl-textfield__label" for={{controlId}}>{{label}}</label>
+{{/if}}
+{{#if inputHasError}}
+    <span class="mdl-textfield__error">
+        {{error}}
+    </span>
+{{/if}}
