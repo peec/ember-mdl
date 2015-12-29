@@ -1,8 +1,19 @@
 # Ember-mdl
 
-This README outlines the details of collaborating on this Ember addon.
+`ember-mdl` is a Material Design implementation of Googles [Material Design Lite Suite](http://getmdl.io).
+
+The goal of this addon is to implement the Material Design Components and use the standard SASS sources from Google UX Team.
+
+
+## Supported components:
+
+TODO
+
+
 
 ## Installation
+
+See the dummy app inside the `tests/dummy` folder. 
 
 * `git clone` this repository
 * `npm install`
