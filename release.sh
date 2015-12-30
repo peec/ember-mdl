@@ -19,7 +19,7 @@ GIT_COMMIT=`git rev-parse HEAD`
 NEEDS_TAG=`git describe --contains $GIT_COMMIT`
 if [ -z "$NEEDS_TAG" ]; then
     echo "Tagged with $NEW_TAG (Ignoring fatal:cannot describe - this means commit is untagged) "
-    git tag $NEW_TAG
+    npm version $NEW_TAG
     git push --tags
     github_changelog_generator
     git add CHANGELOG.md
@@ -27,7 +27,6 @@ if [ -z "$NEEDS_TAG" ]; then
     git push origin master
     ember github-pages:commit --message "Update gh-pages for $NEW_TAG"
     git checkout master
-    npm version $NEW_TAG
     npm publish
 else
     echo "Already a tag on this commit"
