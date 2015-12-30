@@ -6,6 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('menus');
   this.route('layout');
   this.route('progress');
   this.route('toggles');

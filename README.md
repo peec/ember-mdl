@@ -1,5 +1,9 @@
 # Ember-mdl
 
+
+Demo :http://peec.github.io/ember-mdl/
+
+
 `ember-mdl` is a Material Design implementation of Googles [Material Design Lite Suite](http://getmdl.io).
 
 The goal of this addon is to implement the Material Design Components and use the standard SASS sources from Google UX Team.
@@ -7,7 +11,25 @@ The goal of this addon is to implement the Material Design Components and use th
 
 ## Supported components:
 
-TODO
+
+Component | Support
+------------- | -------------
+Badges  | 100% (no js)
+Buttons  | 100%
+Layout  | 100%
+Loading | 100%
+Menus  | 100%
+Sliders  | 100%
+Toggles | 100%
+Tables | 100% (no js)
+Text Fields | 100%
+Tooltips | 0%
+
+
+** Support marked with `no js` means that support is provided through Google Material Lite SASS only and javascript version components is not needed for these cases for these components to work properly.
+
+
+
 
 
 

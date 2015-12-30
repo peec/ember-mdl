@@ -1,0 +1,16 @@
+<h2>Menues</h2>
+
+<p>Use <code>\{{mdl-menu}}</code> component to create a menu.</p>
+
+
+{{#mdl-menu icon="more_vert"}}
+    {{#mdl-menu-item action="someAction"}}Some Action{{/mdl-menu-item}}
+    {{#mdl-menu-item 'index'}}Go to home{{/mdl-menu-item}}
+    {{#mdl-menu-item disabled=true}}Disabled Action{{/mdl-menu-item}}
+    {{#mdl-menu-item}}Yet Another Action{{/mdl-menu-item}}
+{{/mdl-menu}}
+
+
+
+
+<p><code>mdl-menu-item</code> component are used inside <code>mdl-menu</code>. The mdl-menu-item allows for positional params for routing or action method to run action on click. They can also be disabled with the disabled flag</p>

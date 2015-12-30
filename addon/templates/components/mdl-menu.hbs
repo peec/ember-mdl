@@ -1,0 +1,10 @@
+
+<!-- Left aligned menu below button -->
+{{mdl-button icon=icon action="menuToggle"}}
+
+<div class="mdl-menu__container">
+    <div class="mdl-menu__outline {{positionClass}}"></div>
+    <ul class="mdl-menu {{positionClass}} mdl-js-menu">
+        {{yield}}
+    </ul>
+</div>
