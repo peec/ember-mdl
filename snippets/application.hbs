@@ -1,0 +1,32 @@
+{{#mdl-layout class="mdl-color-text--grey-600"}}
+    {{#mdl-layout-drawer fixed=true}}
+        <span class="mdl-layout-title">Ember MDL</span>
+        <nav class="mdl-navigation">
+            {{#link-to 'index' class="mdl-navigation__link" }}About{{/link-to}}
+            {{#link-to 'badges' class="mdl-navigation__link" }}Badges{{/link-to}}
+            {{#link-to 'buttons' class="mdl-navigation__link" }}Buttons{{/link-to}}
+            {{#link-to 'cards' class="mdl-navigation__link" }}Cards{{/link-to}}
+            {{#link-to 'layout' class="mdl-navigation__link" }}Layout{{/link-to}}
+            {{#link-to 'loading' class="mdl-navigation__link" }}Loading{{/link-to}}
+            {{#link-to 'menus' class="mdl-navigation__link" }}Menus{{/link-to}}
+            {{#link-to 'sliders' class="mdl-navigation__link" }}Sliders{{/link-to}}
+            {{#link-to 'toggles' class="mdl-navigation__link" }}Toggles{{/link-to}}
+            {{#link-to 'tables' class="mdl-navigation__link" }}Tables{{/link-to}}
+            {{#link-to 'text-fields' class="mdl-navigation__link" }}Text Fields{{/link-to}}
+            {{#link-to 'tooltips' class="mdl-navigation__link" }}Tooltips{{/link-to}}
+        </nav>
+
+    {{/mdl-layout-drawer}}
+    {{#mdl-layout-header fixed=true}}
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Ember MDL</span>
+        </div>
+    {{/mdl-layout-header}}
+    {{#mdl-layout-content}}
+
+        <div class="page-content">
+            {{outlet}}
+        </div>
+    {{/mdl-layout-content}}
+{{/mdl-layout}}
