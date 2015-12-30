@@ -49,6 +49,7 @@ export default Ember.Component.extend({
   Constant_: Constant_,
   icon: 'more_vert',
   position: 'bottom-left',
+  currentIndex: 0,
   actions: {
     menuToggle(params, evt) {
       this.handleForClick_(evt.originalEvent);
@@ -59,6 +60,9 @@ export default Ember.Component.extend({
     this.element_ = this.$().find('.mdl-menu')[0];
     this.container_ = this.$().find('.mdl-menu__container')[0];
     this.outline_ = this.$().find('.mdl-menu__outline')[0];
+
+    // Clean up after the animation is complete.
+    this.addAnimationEndListener_();
   },
 
   handleForClick_(evt) {
@@ -102,6 +106,7 @@ export default Ember.Component.extend({
   },
   show(evt) {
 
+    this.set('currentIndex', 0);
 
     if (this.element_ && this.container_ && this.outline_) {
       // Measure the inner element.
@@ -143,8 +148,6 @@ export default Ember.Component.extend({
         this.container_.classList.add(this.CssClasses_.IS_VISIBLE);
       }.bind(this));
 
-      // Clean up after the animation is complete.
-      this.addAnimationEndListener_();
 
       // Add a click listener to the document, to close the menu.
       var callback = function(e) {
@@ -182,8 +185,6 @@ export default Ember.Component.extend({
       this.applyClip_(height, width);
       this.container_.classList.remove(this.CssClasses_.IS_VISIBLE);
 
-      // Clean up after the animation is complete.
-      this.addAnimationEndListener_();
     }
   },
   addAnimationEndListener_() {
@@ -192,6 +193,12 @@ export default Ember.Component.extend({
   },
   removeAnimationEndListener_(evt) {
     evt.target.classList.remove(this.CssClasses_.IS_ANIMATING);
+
+    var firstItem = this.get('enabledMenuItems')[0];
+    if (firstItem) {
+      firstItem.$().focus();
+    }
+
   },
   applyClip_(height, width) {
     if (this.element_.classList.contains(this.CssClasses_.UNALIGNED)) {
@@ -216,5 +223,18 @@ export default Ember.Component.extend({
   },
   positionClass: Ember.computed('position', function () {
     return 'mdl-menu--' + this.get('position');
+  }),
+  init() {
+    this._super(...arguments);
+    this.set('menuItems', Ember.A([]));
+  },
+  registerMenuItem(item) {
+    this.get('menuItems').pushObject(item);
+  },
+  _currentIndexObserver: Ember.observer('currentIndex', function () {
+    this.get('enabledMenuItems')[this.get('currentIndex')].$().focus();
+  }),
+  enabledMenuItems: Ember.computed('menuItems.[]', function () {
+    return this.get('menuItems').filter(m => !m.get('disabled'));
   })
 });

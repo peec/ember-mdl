@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('text-fields');
   this.route('badges');
   this.route('cards');
+  this.route('tooltips');
 });
 
 export default Router;

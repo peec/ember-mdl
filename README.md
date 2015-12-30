@@ -23,7 +23,7 @@ Sliders  | 100%
 Toggles | 100%
 Tables | 100% (no js)
 Text Fields | 100%
-Tooltips | 0%
+Tooltips | 100%
 
 
 ** Support marked with `no js` means that support is provided through Google Material Lite SASS only and javascript version components is not needed for these cases for these components to work properly.

@@ -2,8 +2,20 @@ import Ember from 'ember';
 import layout from '../templates/components/mdl-menu-item';
 import RippleUtil from '../util/ripple';
 
+import MdlMenu from './mdl-menu';
+
+
+const Keycodes_ = {
+  ENTER: 13,
+  ESCAPE: 27,
+  SPACE: 32,
+  UP_ARROW: 38,
+  DOWN_ARROW: 40
+};
+
 const MdlMenuItem = Ember.Component.extend({
   layout: layout,
+  Keycodes_: Keycodes_,
   tagName: 'li',
   _routing: Ember.inject.service('-routing'),
   tabindex: -1,
@@ -43,7 +55,47 @@ const MdlMenuItem = Ember.Component.extend({
 
       routing.transitionTo(route, params);
     }
-  }
+  },
+  keyDown(jqEvt) {
+    var evt = jqEvt.originalEvent;
+    var currentIndex = this.get('menuContainer').get('currentIndex');
+    var menuSize = this.get('menuContainer').get('enabledMenuItems').length;
+    if (evt.keyCode === this.Keycodes_.UP_ARROW) {
+      evt.preventDefault();
+      if (currentIndex > 0) {
+        this.get('menuContainer').set('currentIndex', currentIndex - 1);
+      } else {
+        this.get('menuContainer').set('currentIndex', menuSize - 1);
+      }
+    } else if (evt.keyCode === this.Keycodes_.DOWN_ARROW) {
+      evt.preventDefault();
+      if (menuSize > currentIndex + 1) {
+        this.get('menuContainer').set('currentIndex', currentIndex + 1);
+      } else {
+        this.get('menuContainer').set('currentIndex', 0);
+      }
+    } else if (evt.keyCode === this.Keycodes_.SPACE ||
+        evt.keyCode === this.Keycodes_.ENTER) {
+      evt.preventDefault();
+      // Send mousedown and mouseup to trigger ripple.
+      var e = new MouseEvent('mousedown');
+      evt.target.dispatchEvent(e);
+      e = new MouseEvent('mouseup');
+      evt.target.dispatchEvent(e);
+      // Send click.
+      evt.target.click();
+    } else if (evt.keyCode === this.Keycodes_.ESCAPE) {
+      evt.preventDefault();
+      this.get('menuContainer').hide();
+    }
+  },
+  init() {
+    this._super(...arguments);
+    this.get('menuContainer').registerMenuItem(this);
+  },
+  menuContainer: Ember.computed(function () {
+    return this.nearestOfType(MdlMenu);
+  })
 });
 
 MdlMenuItem.reopenClass({
