@@ -12,7 +12,8 @@ module.exports = {
     afterInstall: function() {
         return RSVP.all([
             this.addBowerPackageToProject('material-design-lite', '~1.0.6'),
-            this.addBowerPackageToProject('matchMedia', '0.2.0')
+            this.addBowerPackageToProject('matchMedia', '0.2.0'),
+            this.addPackageToProject('ember-cli-sass','latest')
         ]);
     }
 };
