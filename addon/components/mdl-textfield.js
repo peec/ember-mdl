@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   classNames: ['mdl-textfield', 'is-upgraded'],
   rows: 3,
   expand: false,
+  type: 'text',
   classNameBindings: [
       'isFocus:is-focused',
       'isDirty:is-dirty',

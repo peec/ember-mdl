@@ -1,3 +1,45 @@
 <h3>Tooltips</h3>
 
-Not in this version yet.
+
+<h4>Simple</h4>
+
+
+
+{{#mdl-tooltip}}
+    <span class="icon material-icons">cloud_upload</span>
+{{else}}
+    Hello
+{{/mdl-tooltip}}
+
+<h4>Large</h4>
+
+{{#mdl-tooltip large=true}}
+    <span class="icon material-icons">cloud_upload</span>
+{{else}}
+    Hello
+{{/mdl-tooltip}}
+
+
+
+<h4>Rich text</h4>
+
+{{#mdl-tooltip}}
+    <span class="icon material-icons">cloud_upload</span>
+{{else}}
+    Upload <h5>file.zip</h5>
+{{/mdl-tooltip}}
+
+
+
+
+
+<h4>Multiple Lines</h4>
+
+{{#mdl-tooltip}}
+    <span class="icon material-icons">cloud_upload</span>
+{{else}}
+    Share your content<br>via social media
+{{/mdl-tooltip}}
+
+
+

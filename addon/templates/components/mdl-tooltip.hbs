@@ -1,1 +1,6 @@
-{{yield}}
+<span id={{triggerId}}>
+    {{yield}}
+</span>
+<div class="mdl-tooltip {{if large 'mdl-tooltip--large'}}" for={{triggerId}}>
+    {{yield to='inverse'}}
+</div>

@@ -21,8 +21,10 @@ export default Ember.Component.extend({
   classNameBindings: [
       'hasDrawer:has-drawer',
       'headerComponent.fixed:mdl-layout--fixed-header',
-      'drawerComponent.fixed:mdl-layout--fixed-drawer'
+      'drawerComponent.fixed:mdl-layout--fixed-drawer',
+      'smallScreen:is-small-screen'
   ],
+  drawerOpen: false,
   isSeamedMode: Ember.computed.equal('mode', 'seamed'),
   isWaterfallMode: Ember.computed.equal('mode', 'waterfall'),
   isScrollMode: Ember.computed.equal('mode', 'scroll'),
@@ -63,14 +65,17 @@ export default Ember.Component.extend({
     this.screenSizeMediaQuery_ = window.matchMedia(
         /** @type {string} */ (Constant_.MAX_WIDTH));
     this.screenSizeMediaQuery_.addListener(this.screenSizeHandler_.bind(this));
-    this.screenSizeHandler_();
+    Ember.run.scheduleOnce('afterRender', this, function () {
+      this.screenSizeHandler_();
+    });
   },
 
   screenSizeHandler_() {
     if (this.screenSizeMediaQuery_.matches) {
-      this.$().addClass('is-small-screen');
+      console.log('-small-screen');
+      this.set('smallScreen', true);
     } else {
-      this.$().removeClass('is-small-screen');
+      this.set('smallScreen', false);
       // Collapse drawer (if any) when moving to a large screen size.
       if (this.get('drawerComponent')) {
         this.set('drawerOpen', false);
