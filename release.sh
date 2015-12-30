@@ -22,6 +22,9 @@ if [ -z "$NEEDS_TAG" ]; then
     git tag $NEW_TAG
     git push --tags
     github_changelog_generator
+    git add CHANGELOG.md
+    git commit -m "Update changelog for $NEW_TAG"
+    git push origin master
     ember github-pages:commit --message "Update gh-pages for $NEW_TAG"
     git checkout master
 else
