@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/mdl-radio';
 import RippleUtil from '../util/ripple';
+import FocusMixin from '../mixins/focusable';
 
 const CssClasses_ = {
   IS_FOCUSED: 'is-focused',
@@ -19,7 +20,7 @@ const CssClasses_ = {
 };
 
 /* global MaterialRadio */
-export default Ember.Component.extend({
+export default Ember.Component.extend(FocusMixin, {
   layout: layout,
   classNames: ['mdl-radio', CssClasses_.IS_UPGRADED],
   classNameBindings: [

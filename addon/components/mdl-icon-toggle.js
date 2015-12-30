@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/mdl-icon-toggle';
 import RippleUtil from '../util/ripple';
+import FocusMixin from '../mixins/focusable';
 
 const CssClasses_ = {
   INPUT: 'mdl-icon-toggle__input',
@@ -14,8 +15,8 @@ const CssClasses_ = {
   IS_CHECKED: 'is-checked'
 };
 
-/* global MaterialRadio */
-export default Ember.Component.extend({
+
+export default Ember.Component.extend(FocusMixin, {
   layout: layout,
   classNames: ['mdl-icon-toggle', 'is-upgraded'],
   classNameBindings: [

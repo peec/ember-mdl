@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/mdl-checkbox';
 import RippleUtil from '../util/ripple';
+import FocusMixin from '../mixins/focusable';
 
 const Constant_ = {
   TINY_TIMEOUT: 0.001
@@ -23,17 +24,16 @@ const CssClasses_ = {
 };
 
 /* global MaterialRadio */
-export default Ember.Component.extend({
+export default Ember.Component.extend(FocusMixin, {
   layout: layout,
   classNames: ['mdl-checkbox', CssClasses_.IS_UPGRADED],
   classNameBindings: [
-    'checked:is-checked',
+      'checked:is-checked'
   ],
   ripple: true,
   tagName: 'label',
   attributeBindings: ['controlId:for'],
   CssClasses: CssClasses_,
-
   controlId: Ember.computed(function () {
     return this.get('elementId') + '_control';
   }),
