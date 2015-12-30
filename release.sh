@@ -10,13 +10,14 @@ VNUM3=${VERSION_BITS[2]}
 VNUM3=$((VNUM3+1))
 NEW_TAG="$VNUM1.$VNUM2.$VNUM3"
 
+git add --all 
+git commit -m "Prepare $NEW_TAG release."
+git push origin master
+
 echo "Updating $VERSION to $NEW_TAG"
 GIT_COMMIT=`git rev-parse HEAD`
 NEEDS_TAG=`git describe --contains $GIT_COMMIT`
 if [ -z "$NEEDS_TAG" ]; then
-    git add --all 
-    git commit -m "Prepare $NEW_TAG release."
-    git push origin master
     echo "Tagged with $NEW_TAG (Ignoring fatal:cannot describe - this means commit is untagged) "
     git tag $NEW_TAG
     git push --tags
