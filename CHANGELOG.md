@@ -1,5 +1,8 @@
 # Change Log
 
+## [v0.0.6](https://github.com/peec/ember-mdl/tree/v0.0.6) (2015-12-30)
+[Full Changelog](https://github.com/peec/ember-mdl/compare/v0.0.5...v0.0.6)
+
 ## [v0.0.5](https://github.com/peec/ember-mdl/tree/v0.0.5) (2015-12-30)
 [Full Changelog](https://github.com/peec/ember-mdl/compare/v0.0.4...v0.0.5)
 
