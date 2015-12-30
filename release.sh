@@ -26,6 +26,7 @@ if [ -z "$NEEDS_TAG" ]; then
     git commit -m "Update changelog for $NEW_TAG"
     git push origin master
     ember github-pages:commit --message "Update gh-pages for $NEW_TAG"
+    git push origin gh-pages
     git checkout master
     npm publish
 else

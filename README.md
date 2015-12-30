@@ -26,7 +26,7 @@ Text Fields | 100%
 Tooltips | 100%
 
 
-** Support marked with `no js` means that support is provided through Google Material Lite SASS only and javascript version components is not needed for these cases for these components to work properly.
+** Support marked with `no js` means that no ember component wrapper is needed for this component to work, use normal HTML tags. **
 
 
 
